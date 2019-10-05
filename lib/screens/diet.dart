@@ -15,8 +15,6 @@ class _DietState extends State<Diet> {
   static double score;
   int val;
 
-
-
   TextEditingController weightEditingController = TextEditingController();
   TextEditingController heightEditingController = TextEditingController();
 
@@ -81,83 +79,88 @@ class _DietState extends State<Diet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('BMI Calculator'),
-        ),
-        body: Container(
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('Please Select Your Gender', style: TextStyle(fontSize: 18),),
-                    DropdownButton<String>(
-                      value: dropdownValue,
-                      style: TextStyle(color: Colors.black),
-                      underline: Container(
-                        height: 2,
-                        color: Colors.black,
-                      ),
-                      onChanged: (String newValue) {
-                        setState(() {
-                          dropdownValue = newValue;
-                        });
-                      },
-                      items: <String>['Male', 'Female']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
+      appBar: AppBar(
+        title: Text('BMI Calculator'),
+      ),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Please Select Your Gender',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  DropdownButton<String>(
+                    value: dropdownValue,
+                    style: TextStyle(color: Colors.black),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.black,
                     ),
-                  ],
-                ),
+                    onChanged: (String newValue) {
+                      setState(() {
+                        dropdownValue = newValue;
+                      });
+                    },
+                    items: <String>['Male', 'Female']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ],
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'Enter Weight'),
-                  controller: weightEditingController,
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Enter Weight'),
+                controller: weightEditingController,
               ),
-              SizedBox(
-                height: 10,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(labelText: 'Enter Height'),
+                controller: heightEditingController,
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: 'Enter Height'),
-                  controller: heightEditingController,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              RaisedButton(
-                  child: Text('Calculate BMI'),
-                  onPressed: () {
-                    weight = double.parse(weightEditingController.text);
-                    height = double.parse(heightEditingController.text);
-                    CalculateResult();
-                    setText(result);
-                  }),
-              SizedBox(
-                height: 10,
-              ),
-              Text(modify_s)
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            RaisedButton(
+                child: Text('Calculate BMI'),
+                onPressed: () {
+                  weight = double.parse(weightEditingController.text);
+                  height = double.parse(heightEditingController.text);
+                  CalculateResult();
+                  setText(result);
+                }),
+            SizedBox(
+              height: 10,
+            ),
+            Text(modify_s)
+          ],
         ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        Navigator.of(context).pushNamed(DietAdvice.routeName,arguments: val);
-      },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(DietAdvice.routeName, arguments: val);
+        },
         child: Icon(Icons.arrow_forward),
       ),
     );

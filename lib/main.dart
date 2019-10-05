@@ -20,8 +20,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: HomeScreen(),
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.blue,
         accentColor: Colors.green,
+        appBarTheme: AppBarTheme(color: Color.fromRGBO(102, 153, 255 , 1))
       ),
       debugShowCheckedModeBanner: false,
       routes: {

@@ -117,12 +117,7 @@ class DiseaseItem extends StatelessWidget {
                     ],
                   ),
                   Row(
-
-
                     children: <Widget>[
-                      // Icon(
-                      //   Icons.work,
-                      // ),
                       SizedBox(
                         width: 9,
                       ),

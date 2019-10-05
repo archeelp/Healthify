@@ -20,19 +20,19 @@ class _DietAdviceState extends State<DietAdvice> {
       if (diet_val == 2) {
         return ListTile(
           title: Text(
-            'You are perfectly fine, Stay Healthy :)'
+              'You are perfectly fine, Stay Healthy :)'
           ),
         );
       } else {
         return ListTile(
           title: Text(
-            text_1
+              text_1
           ),
         );
       }
     }
 
-    ListView show_text_2() {
+    Widget show_text_2() {
       if (diet_val == 2) {
         return ListView(
           children: <Widget>[
@@ -43,50 +43,52 @@ class _DietAdviceState extends State<DietAdvice> {
         );
       } else {
         if (diet_val == 1) {
-          Card(
-            elevation: 10,
-            color: Colors.grey,
-            margin: EdgeInsets.all(10),
-              child: ListView(
-              children: <Widget>[
-                for(int i=0;i<list1.length;i++){
-                  ListTile(
-                    title: list1[i],
-                  )
-                }
-              ],
-            ),
+          return Container(
+            height: 500,
+            padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              child: ListView.builder(itemBuilder: (ctx, index) {
+                return Container(
+                  margin: EdgeInsets.all(10),
+                  child: ListTile(
+                    leading: CircleAvatar(child: Text((index+1).toString()),),
+                    title: Text(list1[index]),
+                  ),
+                );
+              },itemCount: list1.length,)
           );
         }
         else if (diet_val == 4) {
-           Card(
-            elevation: 10,
-            color: Colors.grey,
-            margin: EdgeInsets.all(10),
-              child: ListView(
-              children: <Widget>[
-                for(int i=0;i<list3.length;i++){
-                  ListTile(
-                    title: list1[i],
-                  )
-                }
-              ],
-            ),
+          return Container(
+            height: 500,
+              padding: EdgeInsets.all(10),
+              child: ListView.builder(itemBuilder: (ctx, index) {
+                return Container(
+                  margin: EdgeInsets.all(10),
+                  child: ListTile(
+
+                    leading: CircleAvatar(child: Text((index+1).toString()),),
+                    title: Text(list3[index]),
+                  ),
+                );
+              },itemCount: list3.length,)
+
           );
         } else {
-           Card(
-            elevation: 10,
-            color: Colors.grey,
-            margin: EdgeInsets.all(10),
-              child: ListView(
-              children: <Widget>[
-                for(int i=0;i<list2.length;i++){
-                  ListTile(
-                    title: list1[i],
-                  )
-                }
-              ],
-            ),
+          return Container(
+            height: 500,
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              child:ListView.builder(itemBuilder: (ctx, index) {
+                return Container(
+                  margin: EdgeInsets.all(10),
+                  child: ListTile(
+                    leading: CircleAvatar(child: Text((index+1).toString()),),
+                    title: Text(list2[index]),
+                  ),
+                );
+              },itemCount: list2.length,)
+
           );
         }
       }

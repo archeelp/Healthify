@@ -5,10 +5,12 @@ class Doctor {
   final String locationId;
   final String specialization;
   final String contact;
+  final String exp;
 
   const Doctor(
       {@required this.name,
       @required this.locationId,
       @required this.specialization,
-      this.contact});
+      this.contact,
+      this.exp});
 }

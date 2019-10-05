@@ -52,6 +52,7 @@ class _CityDiseasesScreenState extends State<CityDiseasesScreen> {
             duration: displayedDisease[index].duration,
             symptoms: displayedDisease[index].symptoms,
             cure: displayedDisease[index].cure,
+            type: displayedDisease[index].type,
           );
         },
         itemCount: displayedDisease.length,

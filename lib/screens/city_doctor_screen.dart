@@ -19,8 +19,12 @@ class CityDoctorScreenState extends State<CityDoctorScreen> {
   var _loadedInitData = false;
   var cityId;
   final doctorList = [];
+
+
+
   @override
   void didChangeDependencies() {
+    fetchAndSetProducts();
     if (!_loadedInitData) {
       final routeArgs =
           ModalRoute.of(context).settings.arguments as Map<String, String>;
@@ -35,7 +39,7 @@ class CityDoctorScreenState extends State<CityDoctorScreen> {
   }
 
   Future<void> fetchAndSetProducts() async {
-    final url = 'http://c55b1289.ngrok.io/' + cityTitle;
+    final url = 'http://c55b1289.ngrok.io/$cityTitle';
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, List<String>>;
@@ -64,11 +68,10 @@ class CityDoctorScreenState extends State<CityDoctorScreen> {
       body: ListView.builder(
         physics: BouncingScrollPhysics(),
         itemBuilder: (ctx, index) {
-          return DoctorProfile(diplayedDoc[index].name);
+          return DoctorProfile(doctorList[index]);
         },
-        itemCount: diplayedDoc.length,
+        itemCount: doctorList.length,
       ),
     );
-    ;
   }
 }
