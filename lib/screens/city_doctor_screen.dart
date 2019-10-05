@@ -19,6 +19,7 @@ class CityDoctorScreenState extends State<CityDoctorScreen> {
   var _loadedInitData = false;
   var cityId;
   final doctorList = [];
+
   @override
   void didChangeDependencies() {
     if (!_loadedInitData) {
@@ -40,14 +41,13 @@ class CityDoctorScreenState extends State<CityDoctorScreen> {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, List<String>>;
       for(int i = 0; i < extractedData["names"].length; i++) {
-        var tempDoc = Doctor(
-          exp: extractedData["exp"][i],
+        doctorList.add(Doctor(
+          experience: extractedData["exp"][i],
           name: extractedData["name"][i],
           specialization: extractedData["q"][i],
           locationId: cityId,
           contact: "9987570286"
-        );
-        doctorList.add(tempDoc);
+      ));
       }
     } catch (error) {
       throw (error);
