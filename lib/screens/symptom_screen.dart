@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import './symptom_result.dart';
 
 class SymptomScreen extends StatefulWidget {
-
   static const routeName = '/symptom';
-
 
   @override
   _SymptomScreenState createState() => _SymptomScreenState();
@@ -26,7 +24,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
 
   void submitSymptoms() {
     if (symptomsAdded.isNotEmpty) {
-      Navigator.of(context).pushNamed(
+      Navigator.of(context).pushReplacementNamed(
         SymptomResult.routeName,
         arguments: {},
       );
@@ -51,15 +49,24 @@ class _SymptomScreenState extends State<SymptomScreen> {
               ),
             ),
             ...(symptomsAdded as List<String>).map((symptom) {
-              return Container(
-                height: 40,
-                margin: EdgeInsets.fromLTRB(0, 10, 0, 2),
-                width: double.infinity,
-                child: Card(
-                  child: Text("$symptom"),
+              return ListTile(
+                leading: IconButton(
+                  icon: Icon(Icons.delete),
+                  color: Theme.of(context).errorColor,
+                  onPressed: () => setState(
+                    () => symptomsAdded.removeWhere((s) {
+                      return s == symptom;
+                    }),
+                  ),
                 ),
+                title: Text("$symptom"),
               );
-            }).toList()
+            }).toList(),
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(),
+            ),
           ],
         ),
       );
@@ -95,7 +102,9 @@ class _SymptomScreenState extends State<SymptomScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Container(
                     margin: EdgeInsets.all(10),
                     child: Row(
@@ -122,9 +131,3 @@ class _SymptomScreenState extends State<SymptomScreen> {
     );
   }
 }
-
-
-
-
-
-
