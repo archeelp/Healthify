@@ -73,7 +73,28 @@ class _SymptomResultState extends State<SymptomResult> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Text(result == null ? '' : result),
+      body: Center(
+        child: Container(
+          color: Colors.lightGreenAccent,
+          margin: EdgeInsets.all(10),
+          height: 200,
+          width: double.infinity,
+          child: Card(
+            elevation: 10,
+            child: Center(
+              child: Text(
+                "You may have " +
+                    result +
+                    ". Please visit the clinic if needed",
+                style: TextStyle(
+                  fontSize: 26,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
