@@ -1,6 +1,6 @@
+import 'package:app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/city_disease_screen.dart';
 
 class CityItem extends StatelessWidget {
   final String id;
@@ -11,7 +11,7 @@ class CityItem extends StatelessWidget {
 
   void selectCity(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
-      CityDiseasesScreen.routeName,
+      TabScreen.routeName,
       arguments: {
         'id': id,
         'title': title,

@@ -4,9 +4,11 @@ class Doctor {
   final String name;
   final String locationId;
   final String specialization;
+  final String contact;
 
-  Doctor(
+  const Doctor(
       {@required this.name,
       @required this.locationId,
-      @required this.specialization});
+      @required this.specialization,
+      this.contact});
 }

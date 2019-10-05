@@ -1,5 +1,4 @@
 import 'package:app/models/city.dart';
-import 'package:flutter/material.dart';
 
 import './models/disease.dart';
 import './models/city.dart';

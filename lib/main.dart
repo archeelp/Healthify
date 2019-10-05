@@ -1,6 +1,7 @@
 import 'package:app/screens/cities_screen.dart';
 import 'package:app/screens/city_disease_screen.dart';
 import 'package:app/screens/disease_detail_screen.dart';
+import 'package:app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/home_screen.dart';
 import './screens/symptom_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
-        secondaryHeaderColor: Colors.green,
+        accentColor: Colors.green,
       ),
       debugShowCheckedModeBanner: false,
       routes: {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         CityDiseasesScreen.routeName: (ctx) => CityDiseasesScreen(DUMMY_DISEASES),
         Diet.routeName: (ctx) => Diet(),
         DiseaseDetailScreen.routeName: (ctx) => DiseaseDetailScreen(),
+        TabScreen.routeName: (ctx) => TabScreen(),
       }
     );
   }

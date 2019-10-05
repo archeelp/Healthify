@@ -19,11 +19,6 @@ class _CityDiseasesScreenState extends State<CityDiseasesScreen> {
   List<Disease> displayedDisease;
   var _loadedInitData = false;
 
-  @override
-  void initState() {
-    // ...
-    super.initState();
-  }
 
   @override
   void didChangeDependencies() {
