@@ -1,5 +1,6 @@
 import 'package:app/screens/cities_screen.dart';
 import 'package:app/screens/city_disease_screen.dart';
+import 'package:app/screens/diet_advice.dart';
 import 'package:app/screens/disease_detail_screen.dart';
 import 'package:app/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         Diet.routeName: (ctx) => Diet(),
         DiseaseDetailScreen.routeName: (ctx) => DiseaseDetailScreen(),
         TabScreen.routeName: (ctx) => TabScreen(),
+        DietAdvice.routeName: (ctx) => DietAdvice(),
       }
     );
   }

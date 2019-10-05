@@ -5,27 +5,36 @@ class HomeCard extends StatelessWidget {
   final String imagePath;
   final String goToRoute;
 
-  HomeCard({@required this.cardText, @required this.imagePath, @required this.goToRoute});
+  HomeCard(
+      {@required this.cardText,
+      @required this.imagePath,
+      @required this.goToRoute});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(
-      onTap: ()=> Navigator.of(context).pushNamed(goToRoute),
+      onTap: () => Navigator.of(context).pushNamed(goToRoute),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-        height: 180,
         width: double.infinity,
         child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
           elevation: 5,
           child: Stack(
             children: <Widget>[
               Container(
                 width: double.infinity,
-                child: Image.asset(
-                  imagePath,
-                  fit: BoxFit.fill,
-
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(15)
+                  ),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Positioned(
@@ -41,7 +50,10 @@ class HomeCard extends StatelessWidget {
                   color: Colors.black54,
                   child: Text(
                     cardText,
-                    style: TextStyle(color: Colors.white, fontSize: 24,),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),

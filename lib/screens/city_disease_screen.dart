@@ -43,6 +43,7 @@ class _CityDiseasesScreenState extends State<CityDiseasesScreen> {
         title: Text('Disease'),
       ),
       body: ListView.builder(
+        physics: BouncingScrollPhysics(),
         itemBuilder: (ctx, index) {
           return DiseaseItem(
             id: displayedDisease[index].id,

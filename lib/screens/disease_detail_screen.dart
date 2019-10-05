@@ -24,8 +24,8 @@ class DiseaseDetailScreen extends StatelessWidget {
       ),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
-      height: 150,
-      width: 300,
+      height: 200,
+      width: 350,
       child: child,
     );
   }
@@ -33,12 +33,14 @@ class DiseaseDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final diseaseId = ModalRoute.of(context).settings.arguments as String;
-    final selecteddisease = DUMMY_DISEASES.firstWhere((disease) => disease.id == diseaseId);
+    final selecteddisease =
+        DUMMY_DISEASES.firstWhere((disease) => disease.id == diseaseId);
     return Scaffold(
       appBar: AppBar(
         title: Text('${selecteddisease.title}'),
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: <Widget>[
             Container(
@@ -52,34 +54,33 @@ class DiseaseDetailScreen extends StatelessWidget {
             buildSectionTitle(context, 'Symptoms'),
             buildContainer(
               ListView.builder(
-                itemBuilder: (ctx, index) => Card(
-                      color: Theme.of(context).accentColor,
-                      child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 10,
-                          ),
-                          child: Text(selecteddisease.symptoms[index])),
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (ctx, index) => Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10,
                     ),
+                    child: Text(selecteddisease.symptoms[index])),
                 itemCount: selecteddisease.symptoms.length,
               ),
             ),
             buildSectionTitle(context, 'Cure'),
             buildContainer(
               ListView.builder(
+                physics: BouncingScrollPhysics(),
                 itemBuilder: (ctx, index) => Column(
-                      children: [
-                        ListTile(
-                          leading: CircleAvatar(
-                            child: Text('# ${(index + 1)}'),
-                          ),
-                          title: Text(
-                            selecteddisease.cure[index],
-                          ),
-                        ),
-                        Divider()
-                      ],
+                  children: [
+                    ListTile(
+                      leading: CircleAvatar(
+                        child: Text('# ${(index + 1)}'),
+                      ),
+                      title: Text(
+                        selecteddisease.cure[index],
+                      ),
                     ),
+                    Divider()
+                  ],
+                ),
                 itemCount: selecteddisease.cure.length,
               ),
             ),

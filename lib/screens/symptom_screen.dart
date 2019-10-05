@@ -39,36 +39,33 @@ class _SymptomScreenState extends State<SymptomScreen> {
       return Container(
         width: double.infinity,
         margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              "\n\nSymptoms you have added:\n",
-              style: TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            ...(symptomsAdded as List<String>).map((symptom) {
-              return ListTile(
-                trailing: IconButton(
-                  icon: Icon(Icons.delete),
-                  color: Theme.of(context).errorColor,
-                  onPressed: () => setState(
-                    () => symptomsAdded.removeWhere((s) {
-                      return s == symptom;
-                    }),
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                "\n\nSymptoms you have added:\n",
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w600,
                 ),
-                title: Text("$symptom"),
-              );
-            }).toList(),
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(),
-            ),
-          ],
+              ),
+              ...(symptomsAdded as List<String>).map((symptom) {
+                return ListTile(
+                  trailing: IconButton(
+                    icon: Icon(Icons.delete),
+                    color: Theme.of(context).errorColor,
+                    onPressed: () => setState(
+                      () => symptomsAdded.removeWhere((s) {
+                        return s == symptom;
+                      }),
+                    ),
+                  ),
+                  title: Text("$symptom"),
+                );
+              }).toList(),
+            ],
+          ),
         ),
       );
     }
