@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
             HomeCard(
               cardText: 'Diet Prediction',
               imagePath: 'lib/assets/590825882-H.jpg',
-              //goToRoute: Diet.routeName,
+              goToRoute: Diet.routeName,
             ),
           ],
         ),

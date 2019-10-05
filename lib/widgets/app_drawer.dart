@@ -1,22 +1,23 @@
 import 'package:app/screens/cities_screen.dart';
-import 'package:app/screens/diet.dart';
 import 'package:app/screens/symptom_screen.dart';
 import 'package:flutter/material.dart';
+import '../screens/diet.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Drawer(
-      child: ListView(physics: BouncingScrollPhysics(),
+      child: ListView(
+        physics: BouncingScrollPhysics(),
         children: <Widget>[
           Container(
-            height: 150,
+              height: 150,
               width: double.infinity,
               child: Image.asset(
-            'lib/assets/health_sign-2-512.png',
+                'lib/assets/health_sign-2-512.png',
                 fit: BoxFit.fill,
-          )),
+              )),
           Container(
             alignment: Alignment.center,
             child: ListTile(
@@ -35,7 +36,8 @@ class AppDrawer extends StatelessWidget {
             alignment: Alignment.center,
             child: ListTile(
               onTap: () {
-                Navigator.of(context).pushReplacementNamed(SymptomScreen.routeName);
+                Navigator.of(context)
+                    .pushReplacementNamed(SymptomScreen.routeName);
               },
               leading: Icon(Icons.local_hotel),
               title: Text(
@@ -62,9 +64,9 @@ class AppDrawer extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: ListTile(
-//              onTap: () {
-//                Navigator.of(context).pushNamed(Diet.routeName);
-//              },
+              onTap: () {
+                Navigator.of(context).pushNamed(Diet.routeName);
+              },
               leading: Icon(Icons.fastfood),
               title: Text(
                 'Diet Prediction',
