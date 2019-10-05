@@ -1,5 +1,6 @@
 import 'package:app/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
+
 import './symptom_result.dart';
 
 class SymptomScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "\n\nSymptoms you have added:",
+              "\n\nSymptoms you have added:\n",
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.w600,
@@ -50,7 +51,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
             ),
             ...(symptomsAdded as List<String>).map((symptom) {
               return ListTile(
-                leading: IconButton(
+                trailing: IconButton(
                   icon: Icon(Icons.delete),
                   color: Theme.of(context).errorColor,
                   onPressed: () => setState(

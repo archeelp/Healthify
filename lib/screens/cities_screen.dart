@@ -23,7 +23,7 @@ class CityScreen extends StatelessWidget {
                 (catData) => CityItem(
                   catData.id,
                   catData.title,
-                  catData.color,
+                  catData.imageUrl,
                 ),
               )
               .toList(),

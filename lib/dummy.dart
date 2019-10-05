@@ -8,32 +8,32 @@ const List<City> DUMMY_CITIES = const [
   City(
     id: 'c1',
     title: 'Mumbai',
-    color: Colors.purple,
+    imageUrl: 'lib/assets/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg'
   ),
   City(
     id: 'c2',
     title: 'Delhi',
-    color: Colors.red,
+    imageUrl: 'lib/assets/new-delhi-india-gate-147623366844-orijgp.jpg'
   ),
   City(
     id: 'c3',
     title: 'Banglore',
-    color: Colors.orange,
+    imageUrl: 'lib/assets/jctp0084-central-area-bangalore-india-moore-3.jpg'
   ),
   City(
     id: 'c4',
     title: 'Hyderabad',
-    color: Colors.amber,
+    imageUrl: 'lib/assets/HYDERABAD.jpg'
   ),
   City(
     id: 'c5',
     title: 'Pune',
-    color: Colors.blue,
+    imageUrl: 'lib/assets/shaniwar-wada-pune-tourism-entry-fee-timings-holidays-reviews-header.jpg'
   ),
   City(
     id: 'c6',
     title: 'Kolkata',
-    color: Colors.green,
+    imageUrl: 'lib/assets/KOLKATA.jpg'
   ),
 ];
 

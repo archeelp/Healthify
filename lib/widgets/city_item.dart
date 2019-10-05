@@ -5,9 +5,9 @@ import '../screens/city_disease_screen.dart';
 class CityItem extends StatelessWidget {
   final String id;
   final String title;
-  final Color color;
+  final String imageUrl;
 
-  CityItem(this.id, this.title, this.color);
+  CityItem(this.id, this.title, this.imageUrl);
 
   void selectCity(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
@@ -43,7 +43,7 @@ class CityItem extends StatelessWidget {
                     topRight: Radius.circular(15),
                   ),
                   child: Image.asset(
-                    'lib/assets/590825882-H.jpg',
+                    imageUrl,
                     fit: BoxFit.fill,
                   ),
                 ),
