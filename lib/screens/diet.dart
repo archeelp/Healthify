@@ -22,6 +22,7 @@ class _DietState extends State<Diet> {
 
   void setText(val) {
     setState(() {
+      print(val);
       modify_s = val;
     });
   }
@@ -29,32 +30,51 @@ class _DietState extends State<Diet> {
   void CalculateResult() {
     score = (weight / (height * height));
     int iScore = score.floor();
+    print('iscore');
+    print(iScore);
     if (dropdownValue == 'Male') {
       if (iScore < 19) {
         result = 'Underweight';
-        val = 1;
+        setState(() {
+          val = 1;
+        });
       } else if (iScore < 25) {
         result = 'Normal';
-        val = 2;
+        setState(() {
+          val = 2;
+        });
       } else if (iScore < 30) {
         result = 'Overweight';
-        val = 3;
-      } else
+        setState(() {
+          val = 3;
+        });
+      } else {
         result = 'Obesity';
-      val = 4;
+        setState(() {
+          val = 4;
+        });
+      }
     } else {
       if (iScore < 17) {
         result = 'Underweight';
-        val = 1;
+        setState(() {
+          val = 1;
+        });
       } else if (iScore < 22) {
         result = 'Normal';
-        val = 2;
+        setState(() {
+          val = 2;
+        });
       } else if (iScore < 28) {
         result = 'Overweight';
-        val = 3;
+        setState(() {
+          val = 3;
+        });
       } else
         result = 'Obesity';
-      val = 4;
+      setState(() {
+        val = 4;
+      });
     }
   }
 
