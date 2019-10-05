@@ -13,7 +13,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
         secondaryHeaderColor: Colors.green,
+
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
