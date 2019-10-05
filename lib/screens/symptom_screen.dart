@@ -25,9 +25,10 @@ class _SymptomScreenState extends State<SymptomScreen> {
 
   void submitSymptoms() {
     if (symptomsAdded.isNotEmpty) {
+      SymptomResult.symptoms = symptomsAdded;
       Navigator.of(context).pushReplacementNamed(
         SymptomResult.routeName,
-        arguments: {},
+
       );
     }
   }
@@ -71,8 +72,10 @@ class _SymptomScreenState extends State<SymptomScreen> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(

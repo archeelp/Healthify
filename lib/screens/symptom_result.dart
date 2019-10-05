@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:app/symptom_data.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import './symptoms_result_2.dart';
 
 class SymptomResult extends StatefulWidget {
   static const routeName = '/symptom-result';
+  static List<String> symptoms;
 
   @override
   _SymptomResultState createState() => _SymptomResultState();
@@ -14,6 +18,7 @@ class _SymptomResultState extends State<SymptomResult> {
   final List<SymptomQuestionPair> selectedQuestions = symptomQuestions;
   int questionIndex = 0;
   List<String> options = [];
+  String result;
 
   void questionAnswered(String option) {
     if (questionIndex < selectedQuestions.length) {
@@ -21,6 +26,41 @@ class _SymptomResultState extends State<SymptomResult> {
       setState(() {
         questionIndex++;
       });
+    }
+  }
+
+  String s(List<String> l) {
+    String res = "";
+    for (var x in l) {
+      res += x + ',';
+    }
+    res = res.substring(0, res.length - 1 );
+    return res;
+  }
+
+  void initState() {
+    fetchAndSetProducts();
+  }
+
+  Future<void> fetchAndSetProducts() async {
+
+//    print(CityDoctorScreen.cityTitle['title']);
+    final url = 'http://c55b1289.ngrok.io/predict/' + s(SymptomResult.symptoms) ;
+    try {
+      final response = await http.get(url);
+      print(response.body);
+      setState(() {
+        final Map<String, dynamic> extractedData =
+            jsonDecode(response.body) as Map<String, dynamic>;
+//        for (int i = 0; i < extractedData.length; i++) {
+//          exp.add(extractedData[i.toString()]['exp']);
+//          name.add(extractedData[i.toString()]['name']);
+//          q.add(extractedData[i.toString()]['q']);
+//        }
+        result = extractedData['data'];
+      });
+    } catch (error) {
+      throw (error);
     }
   }
 
@@ -33,46 +73,7 @@ class _SymptomResultState extends State<SymptomResult> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: questionIndex < selectedQuestions.length
-          ? Container(
-              width: double.infinity,
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "${selectedQuestions[questionIndex].question}",
-                    style: TextStyle(
-                      fontSize: 28,
-                      color: Colors.black87,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  ...(selectedQuestions[questionIndex].options as List<String>)
-                      .map((option) {
-                    return Container(
-                        margin: EdgeInsets.symmetric(vertical: 5),
-                        height: 30,
-                        child: Container(
-                          width: double.infinity,
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          child: RaisedButton(
-                            child: Text(
-                              option,
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                              ),
-                            ),
-                            onPressed: () => questionAnswered(option),
-                            color: Colors.lightBlue,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                          ),
-                        ));
-                  }).toList()
-                ],
-              ),
-            )
-          : SymptomFinal(),
+      body: Text(result == null ? '' : result),
     );
   }
 }
