@@ -21,6 +21,8 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
   List<Doctor> diplayedDoc;
 
   var cityId;
+  
+  var _isLoading = false;
 
   List<String> exp = [];
 
@@ -77,7 +79,9 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
   }
 
   Future<void> fetchAndSetProducts() async {
-    print(CityDoctorScreen.cityTitle['title']);
+    setState(() {
+        _isLoading = true;
+      });
     final url =
         'http://c55b1289.ngrok.io/${CityDoctorScreen.cityTitle['title']}';
     try {
@@ -95,6 +99,9 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
     } catch (error) {
       throw (error);
     }
+     setState(() {
+        _isLoading = false;
+      });
   }
 
   @override
@@ -104,7 +111,11 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
       appBar: AppBar(
         title: Text('Disease'),
       ),
-      body: ListView.builder(
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          :  ListView.builder(
         physics: BouncingScrollPhysics(),
         itemCount: exp.length,
         itemBuilder: (ctx, index) {
