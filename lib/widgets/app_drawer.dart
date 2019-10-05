@@ -1,3 +1,6 @@
+import 'package:app/screens/cities_screen.dart';
+import 'package:app/screens/diet.dart';
+import 'package:app/screens/symptom_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -8,7 +11,7 @@ class AppDrawer extends StatelessWidget {
       child: ListView(physics: BouncingScrollPhysics(),
         children: <Widget>[
           Container(
-            height: 100,
+            height: 150,
               width: double.infinity,
               child: Image.asset(
             'lib/assets/health_sign-2-512.png',
@@ -17,10 +20,13 @@ class AppDrawer extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
               leading: Icon(Icons.home),
               title: Text(
                 'Home',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ),
@@ -28,10 +34,13 @@ class AppDrawer extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(SymptomScreen.routeName);
+              },
               leading: Icon(Icons.local_hotel),
               title: Text(
                 'Symptoms Based Disease Prediction',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ),
@@ -39,10 +48,13 @@ class AppDrawer extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: ListTile(
+              onTap: () {
+                Navigator.of(context).pushNamed(CityScreen.routeName);
+              },
               leading: Icon(Icons.local_hospital),
               title: Text(
                 'Location Based Disease Prediction',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ),
@@ -50,10 +62,13 @@ class AppDrawer extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: ListTile(
+//              onTap: () {
+//                Navigator.of(context).pushNamed(Diet.routeName);
+//              },
               leading: Icon(Icons.fastfood),
               title: Text(
                 'Diet Prediction',
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ),

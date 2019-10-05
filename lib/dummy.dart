@@ -1,9 +1,10 @@
+import 'package:app/models/city.dart';
 import 'package:flutter/material.dart';
 
-import '../models/disease.dart';
-import '../models/city.dart';
+import './models/disease.dart';
+import './models/city.dart';
 
-const DUMMY_CITIES = const [
+const List<City> DUMMY_CITIES = const [
   City(
     id: 'c1',
     title: 'Mumbai',

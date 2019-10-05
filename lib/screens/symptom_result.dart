@@ -1,9 +1,11 @@
 import 'package:app/symptom_data.dart';
 import 'package:flutter/material.dart';
+
 import './symptoms_result_2.dart';
 
 class SymptomResult extends StatefulWidget {
   static const routeName = '/symptom-result';
+
   @override
   _SymptomResultState createState() => _SymptomResultState();
 }
@@ -12,6 +14,7 @@ class _SymptomResultState extends State<SymptomResult> {
   final List<SymptomQuestionPair> selectedQuestions = symptomQuestions;
   int questionIndex = 0;
   List<String> options = [];
+
   void questionAnswered(String option) {
     if (questionIndex < selectedQuestions.length) {
       options.add(option);

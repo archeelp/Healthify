@@ -6,7 +6,7 @@ import '../widgets/disease_item.dart';
 class CityDiseasesScreen extends StatefulWidget {
   static const routeName = '/city-diseases';
 
-  final List<Meal> disease;
+  final List<Disease> disease;
 
   CityDiseasesScreen(this.disease);
 
@@ -40,17 +40,12 @@ class _CityDiseasesScreenState extends State<CityDiseasesScreen> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(String diseaseId) {
-    setState(() {
-      displayedDisease.removeWhere((meal) => disease.id == diseaseId);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryTitle),
+        title: Text('Disease'),
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {

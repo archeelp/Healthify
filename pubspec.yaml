@@ -44,6 +44,8 @@ flutter:
   assets:
     - lib/assets/health_sign-2-512.png
     - lib/assets/images.jpeg
+    - lib/assets/Screenshot 2019-10-05 at 16.11.47.png
+    - lib/assets/590825882-H.jpg
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

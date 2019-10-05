@@ -1,5 +1,4 @@
-
-import './doctor.dart';
+import 'models/doctor.dart';
 
 class DummyDocs{
 
@@ -15,4 +14,27 @@ class DummyDocs{
     Doctor(name: 'Dr. Aditya Patkar', locationId: 'c1', specialization: 'd4'),
     Doctor(name: 'Dr. Mitesh Desai', locationId: 'c2', specialization: 'd5'),
   ];
+
+  List<Doctor> findByLocation(String locId){
+
+    List<Doctor> newDocs = [];
+    for(int i=0;i<dummyDocs.length;i++){
+      if(dummyDocs[i].locationId == locId){
+        newDocs.add(dummyDocs[i]);
+      }
+    }
+    return newDocs;
+  }
+
+  List<Doctor> findByDisease(String diseaseId){
+
+    List<Doctor> newDocs = [];
+    for(int i=0;i<dummyDocs.length;i++){
+      if(dummyDocs[i].locationId == diseaseId){
+        newDocs.add(dummyDocs[i]);
+      }
+    }
+    return newDocs;
+  }
+
 }

@@ -1,7 +1,6 @@
-// import 'package:app/widgets/symptom_item.dart';
+import 'package:app/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 import './symptom_result.dart';
-// import 'package:app/ask.dart';
 
 class SymptomScreen extends StatefulWidget {
 
@@ -70,6 +69,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(
           "Symptom Screen",

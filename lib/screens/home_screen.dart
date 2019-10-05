@@ -1,7 +1,9 @@
+import 'package:app/screens/cities_screen.dart';
 import 'package:app/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/home_card.dart';
 import './symptom_screen.dart';
+import './diet.dart';
 class HomeScreen extends StatelessWidget {
 
   @override
@@ -40,11 +42,13 @@ class HomeScreen extends StatelessWidget {
             ),
             HomeCard(
               cardText: 'Location Based Disease Prediction',
-              imagePath: 'lib/assets/images.jpeg',
+              imagePath: 'lib/assets/Screenshot 2019-10-05 at 16.11.47.png',
+              goToRoute: CityScreen.routeName,
             ),
             HomeCard(
               cardText: 'Diet Prediction',
-              imagePath: 'lib/assets/images.jpeg',
+              imagePath: 'lib/assets/590825882-H.jpg',
+              //goToRoute: Diet.routeName,
             ),
           ],
         ),

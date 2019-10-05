@@ -9,13 +9,18 @@ class DiseaseItem extends StatelessWidget {
   final String imageUrl;
   final int duration;
   final Type type;
+  final List<String> symptoms;
+  final List<String> cure;
 
-  MealItem(
-      {@required this.id,
-      @required this.title,
-      @required this.imageUrl,
-      @required this.type,
-      @required this.duration,});
+  DiseaseItem({
+    @required this.id,
+    @required this.title,
+    @required this.imageUrl,
+    @required this.type,
+    @required this.duration,
+    @required this.symptoms,
+    @required this.cure,
+  });
 
   String get typeText {
     switch (type) {
@@ -112,6 +117,8 @@ class DiseaseItem extends StatelessWidget {
                     ],
                   ),
                   Row(
+
+
                     children: <Widget>[
                       // Icon(
                       //   Icons.work,
