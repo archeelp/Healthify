@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class HomeCard extends StatelessWidget {
   final String cardText;
   final String imagePath;
+  final String goToRoute;
 
-  HomeCard({@required this.cardText, @required this.imagePath});
+  HomeCard({@required this.cardText, @required this.imagePath, @required this.goToRoute});
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(
+      onTap: ()=> Navigator.of(context).pushNamed(goToRoute),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-        height: 200,
+        height: 180,
         width: double.infinity,
         child: Card(
           elevation: 5,
@@ -27,7 +29,8 @@ class HomeCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 70,
+                bottom: 50,
+                top: 50,
                 right: 0,
                 left: 0,
                 child: Container(
@@ -47,7 +50,6 @@ class HomeCard extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () {},
     );
   }
 }

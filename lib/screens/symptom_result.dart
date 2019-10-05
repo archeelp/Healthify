@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SymptomResult extends StatelessWidget {
-  
-  
+
   static const routeName = '/symptom-result';
   @override
   Widget build(BuildContext context) {
