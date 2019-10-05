@@ -82,49 +82,54 @@ class _SymptomScreenState extends State<SymptomScreen> {
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.all(15),
-            child: Card(
-              elevation: 5,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    child: TextField(
-                      controller: symptomController,
-                      decoration: InputDecoration(
-                        labelText: "Enter a symptom",
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(15),
+                child: Card(
+                  elevation: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        child: TextField(
+                          controller: symptomController,
+                          decoration: InputDecoration(
+                            labelText: "Enter a symptom",
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        RaisedButton(
-                          onPressed: () => addSymptom(),
-                          child: Text("Add symptom"),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            RaisedButton(
+                              onPressed: () => addSymptom(),
+                              child: Text("Add symptom"),
+                            ),
+                            RaisedButton(
+                              onPressed: () => submitSymptoms(),
+                              child: Text("Submit"),
+                            ),
+                          ],
                         ),
-                        RaisedButton(
-                          onPressed: () => submitSymptoms(),
-                          child: Text("Submit"),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+              showAddedSymptoms(),
+            ],
           ),
-          showAddedSymptoms(),
-        ],
+        ),
       ),
     );
   }
