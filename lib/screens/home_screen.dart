@@ -8,7 +8,21 @@ class HomeScreen extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Home')
+        title:  Text('Home'),
+            actions: <Widget>[
+              PopupMenuButton(
+                itemBuilder: (_)=> [
+                  PopupMenuItem(
+                    child: Text('Sign Up'),
+                    value: 0,
+                  ),
+                  PopupMenuItem(
+                    child: Text('Sign In'),
+                    value: 0,
+                  ),
+                ],
+              )
+        ],
       ),
       drawer: AppDrawer(),
       body: Container(
