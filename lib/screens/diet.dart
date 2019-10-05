@@ -8,19 +8,24 @@ class Diet extends StatefulWidget {
 }
 
 class _DietState extends State<Diet> {
-  static int weight, height;
+  static double weight, height;
   static String dropdownValue = 'male';
-  static String result, score, modify_s='Let\'s see your result';
-  
-  void setText(val){
+  static String result,modify_s = 'Let\'s see your result';
+  static double score;
+
+
+  TextEditingController weightEditingController = TextEditingController();
+  TextEditingController heightEditingController = TextEditingController();
+
+  void setText(val) {
     setState(() {
-     modify_s = val; 
+      modify_s = val;
     });
   }
 
   void CalculateResult() {
-    score = (weight / (height * height)).toString();
-    int iScore = int.parse(score);
+    score = (weight / (height * height));
+    int iScore = score.floor();
     if (dropdownValue == 'male') {
       if (iScore < 19) {
         result = 'Underweight';
@@ -42,68 +47,51 @@ class _DietState extends State<Diet> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(title: Text('BMI Calculator'),),
         body: Column(children: <Widget>[
-      DropdownButton<String>(
-        value: dropdownValue,
-        style: TextStyle(color: Colors.deepPurple),
-        underline: Container(
-          height: 2,
-          color: Colors.deepPurpleAccent,
-        ),
-        onChanged: (String newValue) {
-          setState(() {
-            dropdownValue = newValue;
-          });
-        },
-        items: <String>['male', 'female']
-            .map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-      ),
-      Column(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Text(
-                'Enter your weight(KGs):',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              TextField(
-                onChanged: (text) {
-                  weight = int.parse(text);
-                },
-              ),
-              Text(
-                'Enter your height(m):',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              TextField(
-                onChanged: (text) {
-                  height = int.parse(text);
-                },
-              )
-            ],
+          DropdownButton<String>(
+            value: dropdownValue,
+            style: TextStyle(color: Colors.black),
+            underline: Container(
+              height: 2,
+              color: Colors.black,
+            ),
+            onChanged: (String newValue) {
+              setState(() {
+                dropdownValue = newValue;
+              });
+            },
+            items: <String>['male', 'female']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
           ),
-        ],
-      ),
-      RaisedButton(
-          child: Text('Calculate BMI'),
-          onPressed: () {
-            CalculateResult();
-            setText(result);
-          }),
-          Column(
-            children: <Widget>[
-              Text(modify_s),
-            ],
-          )
-    ]));
+          TextField(
+            decoration: InputDecoration(labelText: 'Enter Weight'),
+            controller: weightEditingController,
+          ),
+          SizedBox(height: 10,),
+          TextField(
+            decoration: InputDecoration(labelText: 'Enter Height'),
+            controller: heightEditingController,
+          ),
+          SizedBox(height: 10,),
+          RaisedButton(
+              child: Text('Calculate BMI'),
+              onPressed: () {
+                weight = double.parse(weightEditingController.text);
+                height = double.parse(heightEditingController.text);
+                CalculateResult();
+                setText(result);
+              }),
+          SizedBox(height: 10,),
+          Text(modify_s)],
+            ));
   }
 }
