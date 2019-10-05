@@ -16,7 +16,7 @@ const List<City> DUMMY_CITIES = const [
   ),
   City(
     id: 'c3',
-    title: 'Banglore',
+    title: 'Bangalore',
     imageUrl: 'lib/assets/jctp0084-central-area-bangalore-india-moore-3.jpg'
   ),
   City(

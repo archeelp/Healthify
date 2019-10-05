@@ -24,6 +24,7 @@ class TabScreenState extends State<TabScreen> {
 
   @override
   void initState() {
+
     selectedPage = [
       {'page': CityDiseasesScreen(DUMMY_DISEASES), 'title': Text('Diseases')},
       {'page': CityDoctorScreen(dummyDocs), 'title': Text('Doctors')},
@@ -33,11 +34,12 @@ class TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
+    CityDoctorScreen.cityTitle = ModalRoute.of(context).settings.arguments;
     // TODO: implement build
     return Scaffold(
       body: selectedPage[selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Color.fromRGBO(102, 153, 255 , 1),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.category),

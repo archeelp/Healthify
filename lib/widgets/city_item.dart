@@ -13,9 +13,9 @@ class CityItem extends StatelessWidget {
     Navigator.of(ctx).pushNamed(
       TabScreen.routeName,
       arguments: {
-        'id': id,
         'title': title,
-      },
+        'id': id,
+      }
     );
   }
 
