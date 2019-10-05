@@ -10,7 +10,13 @@ class Diet extends StatefulWidget {
 class _DietState extends State<Diet> {
   static int weight, height;
   static String dropdownValue = 'male';
-  static String result, score;
+  static String result, score, modify_s='Let\'s see your result';
+  
+  void setText(val){
+    setState(() {
+     modify_s = val; 
+    });
+  }
 
   void CalculateResult() {
     score = (weight / (height * height)).toString();
@@ -36,27 +42,6 @@ class _DietState extends State<Diet> {
     }
   }
 
-  void OpenActionBar() {
-    Widget okButton = FlatButton(
-      child: Text('OK'),
-      onPressed: () {
-        Navigator.pop(context);
-      },
-    );
-    AlertDialog alert = AlertDialog(
-      title: Text('Your BMI Result'),
-      content: Text(
-          'Your Score is ${score} and you have been found to be ${result}'),
-      actions: <Widget>[
-        okButton,
-      ],
-    );
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alert;
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,9 +97,13 @@ class _DietState extends State<Diet> {
           child: Text('Calculate BMI'),
           onPressed: () {
             CalculateResult();
-            OpenActionBar();
-
+            setText(result);
           }),
+          Column(
+            children: <Widget>[
+              Text(modify_s),
+            ],
+          )
     ]));
   }
 }
