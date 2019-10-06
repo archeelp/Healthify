@@ -1,39 +1,29 @@
 import 'package:app/models/city.dart';
 
-import './models/disease.dart';
 import './models/city.dart';
+import './models/disease.dart';
 
 const List<City> DUMMY_CITIES = const [
   City(
-    id: 'c1',
-    title: 'Mumbai',
-    imageUrl: 'lib/assets/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg'
-  ),
+      id: 'c1',
+      title: 'Mumbai',
+      imageUrl:
+          'lib/assets/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg'),
   City(
-    id: 'c2',
-    title: 'Delhi',
-    imageUrl: 'lib/assets/new-delhi-india-gate-147623366844-orijgp.jpg'
-  ),
+      id: 'c2',
+      title: 'Delhi',
+      imageUrl: 'lib/assets/new-delhi-india-gate-147623366844-orijgp.jpg'),
   City(
-    id: 'c3',
-    title: 'Bangalore',
-    imageUrl: 'lib/assets/jctp0084-central-area-bangalore-india-moore-3.jpg'
-  ),
+      id: 'c3',
+      title: 'Bangalore',
+      imageUrl: 'lib/assets/jctp0084-central-area-bangalore-india-moore-3.jpg'),
+  City(id: 'c4', title: 'Hyderabad', imageUrl: 'lib/assets/HYDERABAD.jpg'),
   City(
-    id: 'c4',
-    title: 'Hyderabad',
-    imageUrl: 'lib/assets/HYDERABAD.jpg'
-  ),
-  City(
-    id: 'c5',
-    title: 'Pune',
-    imageUrl: 'lib/assets/shaniwar-wada-pune-tourism-entry-fee-timings-holidays-reviews-header.jpg'
-  ),
-  City(
-    id: 'c6',
-    title: 'Kolkata',
-    imageUrl: 'lib/assets/KOLKATA.jpg'
-  ),
+      id: 'c5',
+      title: 'Pune',
+      imageUrl:
+          'lib/assets/shaniwar-wada-pune-tourism-entry-fee-timings-holidays-reviews-header.jpg'),
+  City(id: 'c6', title: 'Kolkata', imageUrl: 'lib/assets/KOLKATA.jpg'),
 ];
 
 const DUMMY_DISEASES = const [
@@ -118,7 +108,7 @@ const DUMMY_DISEASES = const [
     title: 'jaundice',
     type: Type.Moderate,
     imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
+        'https://i1.wp.com/lh3.googleusercontent.com/-ATyuYKLGoUg/VyWgMDCruKI/AAAAAAAABQw/INEPmpsAcAs9rb3QnSCEvmI9HTYc4d74QCCo/s600/Jaundice%2Bdisease%25281%2529.jpg?zoom=2.625&resize=371%2C297&ssl=1',
     duration: 10,
     symptoms: [
       'high fever',
@@ -164,7 +154,7 @@ const DUMMY_DISEASES = const [
     title: 'Tuberculosis',
     type: Type.Chronic,
     imageUrl:
-    'https://www.shutterstock.com/image-illustration/bacteria-mycobacterium-tuberculosis-causative-agent-3d-1013219203',
+        'https://www.shutterstock.com/image-illustration/bacteria-mycobacterium-tuberculosis-causative-agent-3d-1013219203',
     duration: 30,
     symptoms: [
       'pain in chest',
