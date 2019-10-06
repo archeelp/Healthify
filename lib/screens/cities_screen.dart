@@ -11,9 +11,7 @@ class CityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: AppDrawer(),
-      appBar: AppBar(
-        title: Text('City'),
-      ),
+      backgroundColor: Color.fromRGBO(102, 153, 255, 1),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10),
         child: ListView(

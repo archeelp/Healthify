@@ -1,3 +1,4 @@
+import 'package:app/screens/about_us.dart';
 import 'package:app/screens/cities_screen.dart';
 import 'package:app/screens/symptom_screen.dart';
 import 'package:flutter/material.dart';
@@ -70,6 +71,20 @@ class AppDrawer extends StatelessWidget {
               leading: Icon(Icons.fastfood),
               title: Text(
                 'Diet Prediction',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ),
+          Divider(),
+          Container(
+            alignment: Alignment.center,
+            child: ListTile(
+              onTap: () {
+                Navigator.of(context).pushNamed(AboutUs.routeName);
+              },
+              leading: Icon(Icons.question_answer),
+              title: Text(
+                'About Us',
                 style: TextStyle(fontSize: 20),
               ),
             ),

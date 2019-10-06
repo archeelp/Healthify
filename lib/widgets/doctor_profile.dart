@@ -19,6 +19,7 @@ class DoctorProfile extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
         width: double.infinity,
         child: Card(
+          color: Color.fromRGBO(102, 153, 255, 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
@@ -47,30 +48,30 @@ class DoctorProfile extends StatelessWidget {
                     Text(
                       name,
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
+                        color: Colors.white,
+                        fontSize: 22,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 8,),
                     Text(
                       q,
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
+                        color: Colors.white,
+                        fontSize: 22,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 8,),
                     Text(
                       exp,
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
+                        color: Colors.white,
+                        fontSize: 22,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 8,),
                   ],
                 ),
               ),

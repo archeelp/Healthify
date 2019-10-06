@@ -1,3 +1,4 @@
+import 'package:app/screens/about_us.dart';
 import 'package:app/screens/cities_screen.dart';
 import 'package:app/screens/city_disease_screen.dart';
 import 'package:app/screens/diet_advice.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
           DiseaseDetailScreen.routeName: (ctx) => DiseaseDetailScreen(),
           TabScreen.routeName: (ctx) => TabScreen(),
           DietAdvice.routeName: (ctx) => DietAdvice(),
+          AboutUs.routeName: (ctx) => AboutUs(),
         });
   }
 }
