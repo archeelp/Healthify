@@ -71,7 +71,7 @@ const DUMMY_DISEASES = const [
     type: Type.Moderate,
     imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
-    duration: 20,
+    duration: 20-25,
     symptoms: [
       'high fever',
       'cough',
@@ -95,7 +95,7 @@ const DUMMY_DISEASES = const [
     type: Type.Moderate,
     imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
-    duration: 20,
+    duration: 30,
     symptoms: [
       'high fever',
       'cough',
@@ -115,11 +115,11 @@ const DUMMY_DISEASES = const [
       'c1',
       'c6',
     ],
-    title: 'dengue',
+    title: 'jaundice',
     type: Type.Moderate,
     imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
-    duration: 20,
+    duration: 10,
     symptoms: [
       'high fever',
       'cough',
@@ -138,11 +138,11 @@ const DUMMY_DISEASES = const [
     cities: [
       'c5',
     ],
-    title: 'dengue',
+    title: 'cholera',
     type: Type.Moderate,
     imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
-    duration: 20,
+    duration: 15,
     symptoms: [
       'high fever',
       'cough',
@@ -164,7 +164,7 @@ const DUMMY_DISEASES = const [
     title: 'Tuberculosis',
     type: Type.Chronic,
     imageUrl:
-    'https://images.app.goo.gl/K5rN6YFXevrvBFBB9',
+    'https://www.shutterstock.com/image-illustration/bacteria-mycobacterium-tuberculosis-causative-agent-3d-1013219203',
     duration: 30,
     symptoms: [
       'pain in chest',

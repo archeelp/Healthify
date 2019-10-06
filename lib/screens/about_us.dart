@@ -33,7 +33,7 @@ class AboutUs extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'Welcome! to healthify app. This app aims to make the people aware of the TRENDING DISEASES in their locality and if they have been found having symptoms of that diesase, then the app lists out the doctors available in their locality. Also, it helps to calculate BMI and get the health advices.',
+                      'Welcome! to the Healthify app. This app aims to make the people aware of the TRENDING DISEASES in their locality and if they have been found having symptoms of that diesase, then the app lists out the doctors available in their locality. Also, it helps to calculate BMI and get the health advices.',
                       style: TextStyle(fontSize: 22),
                       textAlign: TextAlign.center,
                     ),

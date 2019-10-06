@@ -89,7 +89,7 @@ class DiseaseItem extends StatelessWidget {
                       horizontal: 20,
                     ),
                     child: Text(
-                      title,
+                      title.toUpperCase(),
                       style: TextStyle(
                         fontSize: 26,
                         color: Colors.white,

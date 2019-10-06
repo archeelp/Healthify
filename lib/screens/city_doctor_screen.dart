@@ -109,7 +109,7 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Disease'),
+        title: Text('Doctors'),
       ),
       body: _isLoading
           ? Center(

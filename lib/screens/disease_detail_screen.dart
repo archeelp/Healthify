@@ -61,7 +61,7 @@ class DiseaseDetailScreen extends StatelessWidget {
                       horizontal: 10,
                     ),
                     child: Text(
-                      '${(index + 1)}. ${selecteddisease.symptoms[index]}',
+                      '${(index + 1)}. ${selecteddisease.symptoms[index][0].toUpperCase() + selecteddisease.symptoms[index].substring(1, selecteddisease.symptoms[index].length)}',
                       style: TextStyle(fontSize: 22),
                     )),
                 itemCount: selecteddisease.symptoms.length,

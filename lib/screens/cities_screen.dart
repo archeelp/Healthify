@@ -14,7 +14,7 @@ class CityScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color.fromRGBO(102, 153, 255, 1),Color.fromRGBO(174, 214, 241,1)],
+            colors:  [Color.fromRGBO(102, 153, 255, 1),Color.fromRGBO(174, 214, 241,1)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             stops: [0.1,0.6],
