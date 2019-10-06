@@ -26,7 +26,7 @@ class CityItem extends StatelessWidget {
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         width: double.infinity,
         child: Card(
           shape: RoundedRectangleBorder(

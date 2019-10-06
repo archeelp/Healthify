@@ -11,20 +11,29 @@ class CityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: AppDrawer(),
-      backgroundColor: Color.fromRGBO(102, 153, 255, 1),
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: ListView(
-          physics: BouncingScrollPhysics(),
-          children: DUMMY_CITIES
-              .map(
-                (catData) => CityItem(
-                  catData.id,
-                  catData.title,
-                  catData.imageUrl,
-                ),
-              )
-              .toList(),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color.fromRGBO(102, 153, 255, 1),Color.fromRGBO(174, 214, 241,1)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            stops: [0.1,0.6],
+          )
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          child: ListView(
+            physics: BouncingScrollPhysics(),
+            children: DUMMY_CITIES
+                .map(
+                  (catData) => CityItem(
+                    catData.id,
+                    catData.title,
+                    catData.imageUrl,
+                  ),
+                )
+                .toList(),
+          ),
         ),
       ),
     );
