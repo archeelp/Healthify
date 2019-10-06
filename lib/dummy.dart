@@ -71,7 +71,7 @@ const DUMMY_DISEASES = const [
     type: Type.Moderate,
     imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX88-Me9aF4W2I8NPqNG4tYP8AmlEl450vK0Ux6a9eAQq0u-EuvQ',
-    duration: 20-25,
+    duration: 15,
     symptoms: [
       'high fever',
       'cough',
