@@ -68,7 +68,7 @@ class _DietAdviceState extends State<DietAdvice> {
       } else {
         if (diet_val == 1) {
           return Container(
-              height: MediaQuery.of(context).size.height,
+
               padding: EdgeInsets.all(10),
               margin: EdgeInsets.all(10),
               child: ListView.builder(
@@ -87,7 +87,6 @@ class _DietAdviceState extends State<DietAdvice> {
               ));
         } else if (diet_val == 4) {
           return Container(
-              height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.all(10),
               child: ListView.builder(
                 itemBuilder: (ctx, index) {
@@ -107,13 +106,11 @@ class _DietAdviceState extends State<DietAdvice> {
               ));
         } else {
           return Container(
-              height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.all(10),
               margin: EdgeInsets.all(10),
               child: ListView.builder(
                 itemBuilder: (ctx, index) {
                   return Container(
-                    height: MediaQuery.of(context).size.height,
                     child: ListTile(
                       leading: CircleAvatar(
                         child: Text((index + 1).toString()),
