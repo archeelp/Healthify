@@ -12,10 +12,10 @@ class AppDrawer extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         children: <Widget>[
           Container(
-              height: 150,
+              height: 250,
               width: double.infinity,
               child: Image.asset(
-                'lib/assets/health_sign-2-512.png',
+                'android/app/src/main/res/drawable/splash_icon.png',
                 fit: BoxFit.fill,
               )),
           Container(

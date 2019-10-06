@@ -83,7 +83,7 @@ class _CityDoctorScreenState extends State<CityDoctorScreen> {
         _isLoading = true;
       });
     final url =
-        'http://da5eeaae.ngrok.io//${CityDoctorScreen.cityTitle['title']}';
+        'http://da5eeaae.ngrok.io/${CityDoctorScreen.cityTitle['title']}';
     try {
       final response = await http.get(url);
       print(response.body);
