@@ -156,4 +156,27 @@ const DUMMY_DISEASES = const [
       'Regular blood checkups',
     ],
   ),
+  Disease(
+    id: 'd6',
+    cities: [
+      'c6',
+    ],
+    title: 'Tuberculosis',
+    type: Type.Chronic,
+    imageUrl:
+    'https://images.app.goo.gl/K5rN6YFXevrvBFBB9',
+    duration: 30,
+    symptoms: [
+      'pain in chest',
+      'cough',
+      'cold',
+      'shortness of breath',
+    ],
+    cure: [
+      'Long medical treatments',
+      'High vitamin C diet',
+      'It is recomended to visit doctor regularly',
+      'Regular blood checkups',
+    ],
+  ),
 ];

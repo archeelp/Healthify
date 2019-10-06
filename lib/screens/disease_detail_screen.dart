@@ -37,7 +37,7 @@ class DiseaseDetailScreen extends StatelessWidget {
         DUMMY_DISEASES.firstWhere((disease) => disease.id == diseaseId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selecteddisease.title}'),
+        title: Text('${selecteddisease.title.toUpperCase()}'),
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -60,7 +60,10 @@ class DiseaseDetailScreen extends StatelessWidget {
                       vertical: 5,
                       horizontal: 10,
                     ),
-                    child: Text(selecteddisease.symptoms[index])),
+                    child: Text(
+                      '${(index + 1)}. ${selecteddisease.symptoms[index]}',
+                      style: TextStyle(fontSize: 22),
+                    )),
                 itemCount: selecteddisease.symptoms.length,
               ),
             ),
@@ -76,6 +79,7 @@ class DiseaseDetailScreen extends StatelessWidget {
                       ),
                       title: Text(
                         selecteddisease.cure[index],
+                        style: TextStyle(fontSize: 22),
                       ),
                     ),
                     Divider()

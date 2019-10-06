@@ -28,7 +28,6 @@ class _SymptomScreenState extends State<SymptomScreen> {
       SymptomResult.symptoms = symptomsAdded;
       Navigator.of(context).pushReplacementNamed(
         SymptomResult.routeName,
-
       );
     }
   }
@@ -46,23 +45,29 @@ class _SymptomScreenState extends State<SymptomScreen> {
             children: <Widget>[
               Text(
                 "\n\nSymptoms you have added:\n",
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 26,
+                  fontSize: 22,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               ...(symptomsAdded as List<String>).map((symptom) {
-                return ListTile(
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete),
-                    color: Theme.of(context).errorColor,
-                    onPressed: () => setState(
-                      () => symptomsAdded.removeWhere((s) {
-                        return s == symptom;
-                      }),
+                return Column(
+                  children: <Widget>[
+                    ListTile(
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        color: Theme.of(context).errorColor,
+                        onPressed: () => setState(
+                          () => symptomsAdded.removeWhere((s) {
+                            return s == symptom;
+                          }),
+                        ),
+                      ),
+                      title: Text("$symptom"),
                     ),
-                  ),
-                  title: Text("$symptom"),
+                    Divider(),
+                  ],
                 );
               }).toList(),
             ],
@@ -72,18 +77,16 @@ class _SymptomScreenState extends State<SymptomScreen> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       drawer: AppDrawer(),
       appBar: AppBar(
         title: Text(
           "Symptom Screen",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Color.fromRGBO(102, 153, 255, 1),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -100,6 +103,7 @@ class _SymptomScreenState extends State<SymptomScreen> {
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 10),
                         child: TextField(
+                          onSubmitted: (_) => addSymptom(),
                           controller: symptomController,
                           decoration: InputDecoration(
                             labelText: "Enter a symptom",
@@ -115,10 +119,30 @@ class _SymptomScreenState extends State<SymptomScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30.0, vertical: 8.0),
+                              color: Color.fromRGBO(102, 153, 255, 1),
+                              textColor: Theme.of(context)
+                                  .primaryTextTheme
+                                  .button
+                                  .color,
                               onPressed: () => addSymptom(),
                               child: Text("Add symptom"),
                             ),
                             RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30.0, vertical: 8.0),
+                              color: Color.fromRGBO(102, 153, 255, 1),
+                              textColor: Theme.of(context)
+                                  .primaryTextTheme
+                                  .button
+                                  .color,
                               onPressed: () => submitSymptoms(),
                               child: Text("Submit"),
                             ),

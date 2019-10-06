@@ -80,67 +80,70 @@ class _SymptomResultState extends State<SymptomResult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromRGBO(102, 153, 255, 1),
-          title: Text(
-            "Result",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        body: isLoading
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          color: Color.fromRGBO(102, 153, 255, 1),
-                          elevation: 5,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.all(10),
-                            child: Text(
-                              result == null ? '' : result,
-                              style:
-                                  TextStyle(fontSize: 24, color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
+//        appBar: AppBar(
+//          backgroundColor: Color.fromRGBO(102, 153, 255, 1),
+//          title: Text(
+//            "Result",
+//            style: TextStyle(color: Colors.white),
+//          ),
+//        ),
+        body: Container(
+      color: Color.fromRGBO(102, 153, 255, 1),
+      child: isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20),
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10),
+                      child: Card(
+                        color: Colors.white,
+                        elevation: 5,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.all(10),
+                          child: Text(
+                            result == null ? '' : result,
+                            style: TextStyle(fontSize: 24, color: Colors.black),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          color: Color.fromRGBO(102, 153, 255, 1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          elevation: 5,
-                          child: Container(
-                            margin: EdgeInsets.all(10),
-                            child: Text(
-                              result1 == null ? '' : result1,
-                              style:
-                                  TextStyle(fontSize: 24, color: Colors.white),
-                              textAlign: TextAlign.center,
-                            ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10),
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Text(
+                            result1 == null ? '' : result1,
+                            style: TextStyle(fontSize: 24, color: Colors.black),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ));
+              ),
+            ),
+    ));
   }
 }

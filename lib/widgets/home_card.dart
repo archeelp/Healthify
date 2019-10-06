@@ -43,7 +43,7 @@ class HomeCard extends StatelessWidget {
                 right: 0,
                 left: 0,
                 child: Container(
-                  height: 70,
+                  height: MediaQuery.of(context).size.height,
                   width: 300,
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   alignment: Alignment.center,

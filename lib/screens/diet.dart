@@ -83,7 +83,7 @@ class _DietState extends State<Diet> {
         title: Text('BMI Calculator'),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -144,6 +144,12 @@ class _DietState extends State<Diet> {
             ),
             RaisedButton(
                 child: Text('Calculate BMI'),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 8.0),
+                color: Color.fromRGBO(102, 153, 255, 1),
+                textColor: Theme.of(context).primaryTextTheme.button.color,
                 onPressed: () {
                   weight = double.parse(weightEditingController.text);
                   height = double.parse(heightEditingController.text);
@@ -153,11 +159,17 @@ class _DietState extends State<Diet> {
             SizedBox(
               height: 10,
             ),
-            Text(modify_s)
+            Container(
+                margin: EdgeInsets.all(10),
+                child: Text(
+                  modify_s,
+                  style: TextStyle(fontSize: 22),
+                ))
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromRGBO(102, 153, 255, 1),
         onPressed: () {
           Navigator.of(context).pushNamed(DietAdvice.routeName, arguments: val);
         },

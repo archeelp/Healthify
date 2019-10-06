@@ -1,12 +1,9 @@
-import 'package:app/models/doctor.dart';
 import 'package:flutter/material.dart';
 
 class DoctorProfile extends StatelessWidget {
+  final String exp, name, q, imgurl;
 
-  final String exp,name ,q,imgurl;
-
-  DoctorProfile(this.exp,this.name,this.q,this.imgurl);
-
+  DoctorProfile(this.exp, this.name, this.q, this.imgurl);
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +30,10 @@ class DoctorProfile extends StatelessWidget {
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
-                  child: Image.network(
-                    imgurl,
-                    fit: BoxFit.fill,
+                  child: FadeInImage(
+                    placeholder: AssetImage('android/dev_assets/doctor.png'),
+                    image: NetworkImage(imgurl),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -53,7 +51,9 @@ class DoctorProfile extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(
+                      height: 8,
+                    ),
                     Text(
                       q,
                       style: TextStyle(
@@ -62,7 +62,9 @@ class DoctorProfile extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(
+                      height: 8,
+                    ),
                     Text(
                       exp,
                       style: TextStyle(
@@ -71,7 +73,9 @@ class DoctorProfile extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(
+                      height: 8,
+                    ),
                   ],
                 ),
               ),

@@ -24,20 +24,20 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           accentColor: Colors.green,
           appBarTheme: AppBarTheme(color: Color.fromRGBO(102, 153, 255, 1)),
-//          fontFamily: 'Raleway',
-//          textTheme: ThemeData.light().textTheme.copyWith(
-//                body1: TextStyle(
-//                  color: Color.fromRGBO(20, 51, 51, 1),
-//                ),
-//                body2: TextStyle(
-//                  color: Color.fromRGBO(20, 51, 51, 1),
-//                ),
-//                title: TextStyle(
-//                  fontSize: 20,
-//                  // fontWeight: FontWeight.bold,
-//                  fontFamily: 'RobotoCondensed',
-//                ),
-//              ),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                body1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                body2: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                title: TextStyle(
+                  fontSize: 20,
+                  // fontWeight: FontWeight.bold,
+                  fontFamily: 'RobotoCondensed',
+                ),
+              ),
         ),
         debugShowCheckedModeBanner: false,
         routes: {
