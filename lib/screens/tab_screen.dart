@@ -1,8 +1,8 @@
-import 'package:app/dummy.dart';
-import 'package:app/screens/city_disease_screen.dart';
-import 'package:app/screens/city_doctor_screen.dart';
+import 'package:Healthify/dummy.dart';
+import 'package:Healthify/screens/city_disease_screen.dart';
+import 'package:Healthify/screens/city_doctor_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:app/dummy_docs.dart';
+import 'package:Healthify/dummy_docs.dart';
 
 
 class TabScreen extends StatefulWidget {

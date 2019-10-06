@@ -1,7 +1,7 @@
-import 'package:app/screens/cities_screen.dart';
-import 'package:app/widgets/app_drawer.dart';
+import 'package:Healthify/screens/cities_screen.dart';
+import 'package:Healthify/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:app/widgets/home_card.dart';
+import 'package:Healthify/widgets/home_card.dart';
 import './symptom_screen.dart';
 import './diet.dart';
 class HomeScreen extends StatelessWidget {

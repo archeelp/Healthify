@@ -1,6 +1,6 @@
-import 'package:app/screens/about_us.dart';
-import 'package:app/screens/cities_screen.dart';
-import 'package:app/screens/symptom_screen.dart';
+import 'package:Healthify/screens/about_us.dart';
+import 'package:Healthify/screens/cities_screen.dart';
+import 'package:Healthify/screens/symptom_screen.dart';
 import 'package:flutter/material.dart';
 import '../screens/diet.dart';
 

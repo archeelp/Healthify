@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:app/widgets/doctor_profile.dart';
+import 'package:Healthify/widgets/doctor_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 

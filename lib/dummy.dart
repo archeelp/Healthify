@@ -1,4 +1,4 @@
-import 'package:app/models/city.dart';
+import 'package:Healthify/models/city.dart';
 
 import './models/city.dart';
 import './models/disease.dart';

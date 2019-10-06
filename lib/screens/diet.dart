@@ -1,4 +1,4 @@
-import 'package:app/screens/diet_advice.dart';
+import 'package:Healthify/screens/diet_advice.dart';
 import 'package:flutter/material.dart';
 
 class Diet extends StatefulWidget {

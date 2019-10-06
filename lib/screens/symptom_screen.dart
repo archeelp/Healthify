@@ -1,4 +1,4 @@
-import 'package:app/widgets/app_drawer.dart';
+import 'package:Healthify/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 import './symptom_result.dart';

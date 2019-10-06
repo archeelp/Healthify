@@ -1,14 +1,14 @@
-import 'package:app/screens/about_us.dart';
-import 'package:app/screens/cities_screen.dart';
-import 'package:app/screens/city_disease_screen.dart';
-import 'package:app/screens/diet_advice.dart';
-import 'package:app/screens/disease_detail_screen.dart';
-import 'package:app/screens/tab_screen.dart';
+import 'package:Healthify/screens/about_us.dart';
+import 'package:Healthify/screens/cities_screen.dart';
+import 'package:Healthify/screens/city_disease_screen.dart';
+import 'package:Healthify/screens/diet_advice.dart';
+import 'package:Healthify/screens/disease_detail_screen.dart';
+import 'package:Healthify/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/home_screen.dart';
 import './screens/symptom_screen.dart';
 import './screens/symptom_result.dart';
-import 'package:app/dummy.dart';
+import 'package:Healthify/dummy.dart';
 import './screens/diet.dart';
 
 void main() {
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Healthify',
         home: HomeScreen(),
         theme: ThemeData(
           primarySwatch: Colors.blue,

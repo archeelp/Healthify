@@ -1,4 +1,4 @@
-import 'package:app/screens/tab_screen.dart';
+import 'package:Healthify/screens/tab_screen.dart';
 import 'package:flutter/material.dart';
 
 
