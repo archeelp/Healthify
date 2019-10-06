@@ -68,6 +68,7 @@ flutter:
     - android/dev_assets/small.png
     - android/dev_assets/building.png
     - android/dev_assets/healthcare.png
+    - android/dev_assets/doctor.png
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
